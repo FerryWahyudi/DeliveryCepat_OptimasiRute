@@ -129,7 +129,7 @@ if use_osm:
 
     try:
         # Load OSM
-        G_osm = ox.graph_from_point((avg_lat, avg_lon), dist=3000, network_type='drive')
+        G_osm = ox.graph_from_place('Palangka Raya, Indonesia', network_type='drive')
         if len(G_osm.nodes) > 0:
             visualize_osm(G_osm, assignments, selected_algorithm, nodes_df)
         else:
