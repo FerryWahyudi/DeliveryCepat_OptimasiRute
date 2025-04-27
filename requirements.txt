@@ -2,6 +2,6 @@ pandas==2.2.3
 networkx==3.4.2
 osmnx==2.0.2
 streamlit
-matplotlib==3.10.1
+streamlit-folium
+matplotlib
 folium==0.19.5
-pip==25.0.1
