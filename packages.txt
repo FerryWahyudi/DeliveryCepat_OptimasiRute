@@ -7,4 +7,3 @@ libproj-dev
 proj-data
 proj-bin
 libspatialindex-dev
-libspatialindex-c4v5
