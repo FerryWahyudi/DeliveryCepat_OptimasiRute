@@ -9,4 +9,3 @@ scipy==1.10.0
 shapely
 geopandas
 matplotlib==3.10.1
-pip==25.0.1
