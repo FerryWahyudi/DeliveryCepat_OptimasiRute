@@ -126,8 +126,19 @@ st.title("🚛 Visualisasi Optimasi Rute Pengiriman")
 if use_osm:
     avg_lat = nodes_df['Latitude'].mean()
     avg_lon = nodes_df['Longitude'].mean()
-    G_osm = ox.graph_from_point((avg_lat, avg_lon), dist=3000, network_type='drive')
-    visualize_osm(G_osm, assignments, selected_algorithm, nodes_df)
+
+    try:
+        # Load OSM
+        G_osm = ox.graph_from_point((avg_lat, avg_lon), dist=3000, network_type='drive')
+        if len(G_osm.nodes) > 0:
+            visualize_osm(G_osm, assignments, selected_algorithm, nodes_df)
+        else:
+            st.warning("🔄 Peta OSM kosong, beralih ke peta manual.")
+            visualize_manual(G, assignments, selected_algorithm, nodes_df, selected_vehicles)
+    except:
+        st.warning("🔄 Gagal load peta OSM, beralih ke peta manual.")
+        visualize_manual(G, assignments, selected_algorithm, nodes_df, selected_vehicles)
+
 else:
     visualize_manual(G, assignments, selected_algorithm, nodes_df, selected_vehicles)
 
