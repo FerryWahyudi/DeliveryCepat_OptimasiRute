@@ -6,3 +6,4 @@ streamlit-folium
 matplotlib
 folium==0.19.5
 openpyxl
+scipy
