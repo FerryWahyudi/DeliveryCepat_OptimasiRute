@@ -14,8 +14,9 @@ from analysis.analyze_comparative import run_comparative_analysis
 # Modul algoritma dan fitur
 from algorithm.dijkstra import dijkstra, dijkstra_waktu
 from algorithm.astar import astar, astar_waktu
-from features.multi_vehicle import assign_shipments_to_vehicles, calculate_vehicle_loads
+from features.multi_vehicle import assign_shipments_to_vehicles_prioritas_merata
 from features.prioritized import prioritize_shipments
+from features.multi_vehicle import calculate_vehicle_loads
 
 # KONFIGURASI STREAMLIT
 st.set_page_config(page_title="DeliveryCepat - Optimasi Rute Pengiriman", layout="wide")
