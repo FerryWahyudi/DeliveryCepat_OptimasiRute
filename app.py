@@ -18,6 +18,7 @@ from features.multi_vehicle import assign_shipments_to_vehicles_prioritas_merata
 from features.prioritized import prioritize_shipments
 from features.multi_vehicle import calculate_vehicle_loads
 
+
 # KONFIGURASI STREAMLIT
 st.set_page_config(page_title="DeliveryCepat - Optimasi Rute Pengiriman", layout="wide")
 
@@ -110,7 +111,7 @@ shipments = shipments_df.copy()
 if use_priority:
     shipments = prioritize_shipments(shipments)
 
-assignments = assign_shipments_to_vehicles(shipments.to_dict('records'), vehicle_count, vehicle_capacity)
+assignments = assign_shipments_to_vehicles_prioritas_merata(shipments.to_dict('records'), vehicle_count, vehicle_capacity)
 
 selected_vehicles = st.sidebar.multiselect(
     "Pilih Kendaraan untuk Ditampilkan",
